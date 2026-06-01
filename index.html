@@ -4,9 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Kang Li</title>
+  <title>Kang Li | Academic Homepage</title>
 
   <style>
+    :root {
+      --bg: #f7f8fb;
+      --card: #ffffff;
+      --text: #1f2933;
+      --muted: #64748b;
+      --primary: #1f4e79;
+      --primary-dark: #173b5c;
+      --primary-light: #e8f1f8;
+      --border: #e5e7eb;
+      --shadow: rgba(15, 23, 42, 0.06);
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -17,442 +29,570 @@
 
     body {
       margin: 0;
-      font-family: Georgia, "Times New Roman", Times, serif;
-      color: #111;
-      background: #fff;
-      line-height: 1.65;
-      font-size: 16px;
-    }
-
-    .page {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 48px 28px 64px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
     }
 
     a {
-      color: #111;
-      text-decoration: underline;
-      text-underline-offset: 3px;
+      color: var(--primary);
+      text-decoration: none;
     }
 
     a:hover {
-      color: #555;
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
 
     header {
-      border-bottom: 2px solid #111;
-      padding-bottom: 24px;
-      margin-bottom: 28px;
+      background:
+        linear-gradient(135deg, rgba(31, 78, 121, 0.10), rgba(255, 255, 255, 0.96)),
+        #ffffff;
+      border-bottom: 1px solid var(--border);
     }
 
-    h1 {
-      margin: 0 0 8px;
-      font-size: 38px;
-      font-weight: 600;
-      letter-spacing: -0.5px;
+    .hero {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 42px;
+      align-items: center;
+      padding: 64px 0 56px;
     }
 
-    .subtitle {
-      font-size: 18px;
-      margin-bottom: 4px;
+    .avatar {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #dbeafe, #f8fafc);
+      border: 5px solid #ffffff;
+      box-shadow: 0 14px 35px var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 44px;
+      font-weight: 700;
+      color: var(--primary);
     }
 
-    .affiliation {
-      font-size: 16px;
-      color: #333;
-      margin-bottom: 14px;
+    .hero h1 {
+      font-size: 46px;
+      line-height: 1.15;
+      margin: 0 0 10px;
+      letter-spacing: -0.6px;
     }
 
-    .links {
-      font-size: 15px;
-    }
-
-    .links a {
-      margin-right: 18px;
-    }
-
-    nav {
-      margin: 24px 0 36px;
-      padding-bottom: 18px;
-      border-bottom: 1px solid #bbb;
-      font-size: 15px;
-    }
-
-    nav a {
-      margin-right: 22px;
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-    }
-
-    nav a:hover {
-      border-bottom: 1px solid #111;
-    }
-
-    section {
-      margin-bottom: 42px;
-    }
-
-    h2 {
-      font-size: 24px;
-      font-weight: 600;
-      margin: 0 0 16px;
-      padding-bottom: 6px;
-      border-bottom: 1px solid #111;
-    }
-
-    h3 {
-      font-size: 18px;
-      font-weight: 600;
-      margin: 24px 0 10px;
-    }
-
-    p {
-      margin: 0 0 14px;
-    }
-
-    ul {
-      margin: 0;
-      padding-left: 22px;
-    }
-
-    li {
+    .hero .subtitle {
+      font-size: 20px;
+      color: var(--primary);
+      font-weight: 650;
       margin-bottom: 8px;
     }
 
-    .keywords {
-      margin-top: 12px;
+    .hero .affiliation {
+      color: var(--text);
+      font-size: 16.5px;
+      font-weight: 600;
+      margin-bottom: 20px;
     }
 
-    .keywords span {
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .links a {
       display: inline-block;
-      margin: 0 10px 8px 0;
-      padding: 2px 8px;
-      border: 1px solid #111;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid var(--border);
       font-size: 14px;
+      font-weight: 650;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
     }
 
-    .grant,
-    .publication {
-      margin-bottom: 22px;
+    .links a:hover {
+      background: var(--primary-light);
+      text-decoration: none;
     }
 
-    .title {
-      font-weight: 600;
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.93);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
     }
 
-    .cn {
-      color: #333;
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 13px 24px;
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      font-size: 15px;
+      font-weight: 650;
     }
 
-    .meta {
-      color: #333;
+    main {
+      padding: 36px 0 64px;
+    }
+
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      margin-bottom: 28px;
+      box-shadow: 0 12px 28px var(--shadow);
+    }
+
+    section h2 {
+      margin: 0 0 20px;
+      font-size: 25px;
+      color: var(--primary);
+      letter-spacing: -0.2px;
+      border-bottom: 2px solid var(--primary-light);
+      padding-bottom: 10px;
+    }
+
+    section h3 {
+      margin: 26px 0 12px;
+      font-size: 19px;
+      color: var(--primary-dark);
+    }
+
+    section h3:first-child {
+      margin-top: 0;
+    }
+
+    section p {
+      margin-top: 0;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      background: var(--primary-light);
+      color: var(--primary);
+      padding: 7px 13px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .publication,
+    .grant {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .publication:last-child,
+    .grant:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .paper-title,
+    .grant-title {
+      font-size: 17px;
+      font-weight: 750;
+      color: var(--text);
+      line-height: 1.45;
+    }
+
+    .authors,
+    .grant-cn {
+      color: var(--muted);
       font-size: 15px;
     }
 
-    .role {
+    .venue,
+    .grant-source {
       font-size: 15px;
-      color: #333;
+      color: var(--primary);
+      font-weight: 650;
     }
 
-    .role strong {
-      color: #111;
-      font-weight: 600;
+    .paper-links,
+    .grant-role {
+      font-size: 14px;
+      font-weight: 650;
+      color: var(--muted);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 700;
+      margin-right: 8px;
     }
 
     footer {
-      margin-top: 48px;
-      padding-top: 18px;
-      border-top: 1px solid #bbb;
+      text-align: center;
+      color: var(--muted);
       font-size: 14px;
-      color: #444;
+      padding: 24px 0 10px;
     }
 
-    @media (max-width: 680px) {
-      .page {
-        padding: 36px 20px 52px;
+    @media (max-width: 760px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 26px;
+        padding: 46px 0;
       }
 
-      h1 {
-        font-size: 32px;
+      .avatar {
+        margin: 0 auto;
       }
 
-      nav a {
-        display: inline-block;
-        margin-bottom: 8px;
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero .subtitle {
+        font-size: 18px;
+      }
+
+      .links {
+        justify-content: center;
+      }
+
+      .nav-inner {
+        justify-content: center;
+        gap: 16px;
+      }
+
+      section {
+        padding: 24px;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="page">
 
-    <header>
-      <h1>Kang Li</h1>
+  <header>
+    <div class="container hero">
 
-      <div class="subtitle">
-        Ph.D. Student in Robotics and Artificial Intelligence
+      <!-- 如果你之后有照片，可以把这个 div 换成：
+      <img class="avatar" src="images/profile.jpg" alt="Kang Li">
+      -->
+      <div class="avatar">KL</div>
+
+      <div>
+        <h1>Kang Li</h1>
+
+        <div class="subtitle">
+          Ph.D. Student in Robotics and Artificial Intelligence
+        </div>
+
+        <div class="affiliation">
+          College of Artificial Intelligence and Robotics, Hunan University
+        </div>
+
+        <div class="links">
+          <a href="mailto:kangrobotics@hnu.edu.cn">Email</a>
+          <a href="CV.pdf">CV</a>
+        </div>
       </div>
 
-      <div class="affiliation">
-        College of Artificial Intelligence and Robotics, Hunan University
-      </div>
+    </div>
+  </header>
 
-      <div class="links">
-        <a href="mailto:kangrobotics@hnu.edu.cn">Email</a>
-        <a href="CV.pdf">CV</a>
-      </div>
-    </header>
-
-    <nav>
+  <nav>
+    <div class="nav-inner">
       <a href="#about">About</a>
       <a href="#research">Research</a>
-      <a href="#funded-projects">Funded Projects</a>
+      <a href="#grants">Funded Projects</a>
       <a href="#publications">Publications</a>
       <a href="#contact">Contact</a>
-    </nav>
+    </div>
+  </nav>
 
-    <main>
+  <main class="container">
 
-      <section id="about">
-        <h2>About</h2>
+    <section id="about">
+      <h2>About</h2>
 
-        <p>
-          I am a Ph.D. student at the College of Artificial Intelligence and Robotics,
-          Hunan University. My research focuses on robotics and artificial intelligence,
-          especially dual-arm robot motion planning, trajectory learning, and reliable
-          manipulation in structured yet complex task environments.
-        </p>
+      <p>
+        I am a Ph.D. student at the College of Artificial Intelligence and Robotics,
+        Hunan University. My research focuses on robotics and artificial intelligence,
+        especially dual-arm robot motion planning, trajectory learning, and reliable
+        manipulation in structured yet complex task environments.
+      </p>
 
-        <p>
-          My research is motivated by intelligent biochemical laboratory automation,
-          where robots need to perform precise, safe, and robust operations involving
-          bottles, tubes, racks, pipettes, and other experimental tools. I am particularly
-          interested in how robots can learn reusable motion patterns from demonstrations
-          and generalize them to new task configurations while maintaining stability,
-          safety, and task reliability.
-        </p>
-      </section>
+      <p>
+        My research is motivated by intelligent biochemical laboratory automation, where robots
+        need to perform precise, safe, and robust operations involving bottles, tubes, racks,
+        pipettes, and other experimental tools. I am particularly interested in how robots can
+        learn reusable motion patterns from demonstrations and generalize them to new task
+        configurations while maintaining stability, safety, and task reliability.
+      </p>
+    </section>
 
-      <section id="research">
-        <h2>Research Interests</h2>
+    <section id="research">
+      <h2>Research Interests</h2>
 
-        <p>
-          My research focuses on robot skill learning and reliable manipulation in
-          structured but variable environments. I am especially interested in the gap
-          between demonstrated motions and generalized robot execution, and in developing
-          motion planning and control methods that improve the stability, safety, and
-          adaptability of robot operations.
-        </p>
+      <p>
+        My research focuses on robot skill learning and reliable manipulation in structured but
+        variable environments. I am especially interested in the gap between demonstrated motions
+        and generalized robot execution, and in developing motion planning and control methods that
+        improve the stability, safety, and adaptability of robot operations.
+      </p>
 
-        <div class="keywords">
-          <span>Robot Manipulation</span>
-          <span>Dual-Arm Robots</span>
-          <span>Motion Planning</span>
-          <span>Dynamic Movement Primitives</span>
-          <span>Trajectory Learning</span>
-          <span>Learning from Demonstration</span>
-          <span>Embodied AI</span>
-          <span>Biochemical Laboratories</span>
+      <div class="tags">
+        <span class="tag">Robot Manipulation</span>
+        <span class="tag">Dual-Arm Robots</span>
+        <span class="tag">Motion Planning</span>
+        <span class="tag">Dynamic Movement Primitives</span>
+        <span class="tag">Trajectory Learning</span>
+        <span class="tag">Learning from Demonstration</span>
+        <span class="tag">Embodied AI</span>
+        <span class="tag">Scientific Automation</span>
+        <span class="tag">Biochemical Laboratories</span>
+      </div>
+    </section>
+
+    <section id="grants">
+      <h2>Funded Projects</h2>
+
+      <h3>Led Projects</h3>
+
+      <div class="grant">
+        <div class="grant-title">
+          Cognitive-Driven Autonomous Manipulation for Embodied Intelligent Robots in Biochemical Laboratories
         </div>
-      </section>
-
-      <section id="funded-projects">
-        <h2>Funded Projects</h2>
-
-        <h3>Led Projects</h3>
-
-        <div class="grant">
-          <div class="title">
-            Cognitive-Driven Autonomous Manipulation for Embodied Intelligent Robots in Biochemical Laboratories
-          </div>
-          <div class="cn">
-            生化实验室具身智能机器人认知驱动的自主操作技术研究
-          </div>
-          <div class="meta">
-            Postgraduate Scientific Research Innovation Project of Hunan Province
-          </div>
-          <div class="role">
-            <strong>Role:</strong> Project Lead
-          </div>
+        <div class="grant-cn">
+          生化实验室具身智能机器人认知驱动的自主操作技术研究
         </div>
-
-        <div class="grant">
-          <div class="title">
-            Theories and Methods of Movement Primitives for Stable and Safe Continuous-Time Nonlinear Dynamical Systems
-          </div>
-          <div class="cn">
-            面向稳定与安全的连续时间非线性动力系统运动基元理论与方法
-          </div>
-          <div class="meta">
-            Natural Science Foundation of Hunan Province, China, Youth Student Basic Research Project, 2026–2027
-          </div>
-          <div class="role">
-            <strong>Role:</strong> Project Lead
-          </div>
+        <div class="grant-source">
+          Postgraduate Scientific Research Innovation Project of Hunan Province
         </div>
-
-        <h3>Participated Projects</h3>
-
-        <div class="grant">
-          <div class="title">
-            Key Technologies of Multi-Robot Collaboration and Integration for Complex Operations in Intelligent Biochemical Experiments
-          </div>
-          <div class="cn">
-            面向智能生化实验复杂操作的多机器人协作共融关键技术研究
-          </div>
-          <div class="meta">
-            Key Program of the National Natural Science Foundation of China, Grant No. 62433010
-          </div>
-          <div class="role">
-            <strong>Role:</strong> Research Member
-          </div>
+        <div class="grant-role">
+          <span class="badge">Lead</span>
+          Role: Project Lead
         </div>
+      </div>
 
-        <div class="grant">
-          <div class="title">
-            Key Technologies of Large-Model-Driven Autonomous Operation and Precision Control for Intelligent Medical Dual-Arm Robots
-          </div>
-          <div class="cn">
-            大模型驱动的智能医药双臂机器人自主操作与精准控制关键技术
-          </div>
-          <div class="meta">
-            Key Program of Natural Science Foundation of Hunan Province, China, Grant No. 2025JJ30024
-          </div>
-          <div class="role">
-            <strong>Role:</strong> Research Member
-          </div>
+      <div class="grant">
+        <div class="grant-title">
+          Theories and Methods of Movement Primitives for Stable and Safe Continuous-Time Nonlinear Dynamical Systems
         </div>
-
-        <div class="grant">
-          <div class="title">
-            Key Technologies of Human-Robot Integration for Dispensing and Pharmaceutical Robots in Biological Vaccine Manufacturing
-          </div>
-          <div class="cn">
-            面向生物疫苗制造的配药制药共融机器人关键技术研究
-          </div>
-          <div class="meta">
-            Major Research Plan of the National Natural Science Foundation of China, Grant No. 92148204, Completed
-          </div>
-          <div class="role">
-            <strong>Role:</strong> Research Member
-          </div>
+        <div class="grant-cn">
+          面向稳定与安全的连续时间非线性动力系统运动基元理论与方法
         </div>
-      </section>
-
-      <section id="publications">
-        <h2>Publications</h2>
-
-        <div class="publication">
-          <div class="title">
-            PCL-CMP: A Novel Dual-Arm Robotic Cooperative Motion Planning Algorithm Leveraging Pairwise Clearance Learning
-          </div>
-          <div class="meta">
-            Bo Chen, Hui Zhang, <strong>Kang Li</strong>, Yiming Jiang, Wei He, Chenguang Yang, Yaonan Wang
-          </div>
-          <div class="meta">
-            IEEE Transactions on Industrial Electronics, 2026, Early Access
-          </div>
+        <div class="grant-source">
+          Natural Science Foundation of Hunan Province, China, Youth Student Basic Research Project, 2026–2027
         </div>
-
-        <div class="publication">
-          <div class="title">
-            CLEAR-MP: Clearance Learning-Based Efficient Motion Planning for Dual-Arm Robots Under End-Effector Orientation Constraints
-          </div>
-          <div class="meta">
-            Bo Chen, Hui Zhang, <strong>Kang Li</strong>, Yexin Fan, Yiming Jiang, Chenguang Yang, Yaonan Wang
-          </div>
-          <div class="meta">
-            IEEE Transactions on Automation Science and Engineering, 2026, Vol. 23
-          </div>
+        <div class="grant-role">
+          <span class="badge">Lead</span>
+          Role: Project Lead
         </div>
+      </div>
 
-        <div class="publication">
-          <div class="title">
-            CLAMP: Clearance Learning Model-Driven Adaptive Motion Planning for Dual-Arm Robots
-          </div>
-          <div class="meta">
-            Bo Chen, Hui Zhang, <strong>Kang Li</strong>, Yexin Fan, Yiming Jiang, Wei He, Chenguang Yang, Yaonan Wang
-          </div>
-          <div class="meta">
-            IEEE/ASME Transactions on Mechatronics, 2026, Early Access
-          </div>
+      <h3>Participated Projects</h3>
+
+      <div class="grant">
+        <div class="grant-title">
+          Key Technologies of Multi-Robot Collaboration and Integration for Complex Operations in Intelligent Biochemical Experiments
         </div>
-
-        <div class="publication">
-          <div class="title">
-            Robot Perception, Planning, and Control Technologies for Intelligent Biochemical Laboratories
-          </div>
-          <div class="meta">
-            Zhang Hui, <strong>Li Kang</strong>, Liu Li-Zhu, Chen Bo, Fan Ye-Xin, Jiang Yi-Ming, Wang Yao-Nan
-          </div>
-          <div class="meta">
-            Acta Automatica Sinica, 2025, 51(9): 1899–1921
-          </div>
-          <div class="meta">
-            <a href="https://doi.org/10.16383/j.aas.c240714">doi: 10.16383/j.aas.c240714</a>
-          </div>
+        <div class="grant-cn">
+          面向智能生化实验复杂操作的多机器人协作共融关键技术研究
         </div>
-
-        <div class="publication">
-          <div class="title">
-            Modified Dynamic Movement Primitives With Control: A Novel Trajectory Planning Framework for Dual-Arm Asynchronous Tasks
-          </div>
-          <div class="meta">
-            <strong>Kang Li</strong>, Hui Zhang, Bo Chen, Yiming Jiang, Chenguang Yang, Yaonan Wang
-          </div>
-          <div class="meta">
-            IEEE Transactions on Industrial Electronics, 2025, Vol. 72, No. 10
-          </div>
+        <div class="grant-source">
+          Key Program of the National Natural Science Foundation of China, Grant No. 62433010
         </div>
-
-        <div class="publication">
-          <div class="title">
-            Multi-Scale Feature Extraction Network with Half-Wavelet Pyramid Attention Mechanism for Robust 6D Pose Estimation
-          </div>
-          <div class="meta">
-            Chuiwang Kong, Hui Zhang, Weili Chen, Bo Chen, <strong>Kang Li</strong>
-          </div>
-          <div class="meta">
-            44th Chinese Control Conference, 2025
-          </div>
+        <div class="grant-role">
+          <span class="badge">Member</span>
+          Role: Research Member
         </div>
+      </div>
 
-        <div class="publication">
-          <div class="title">
-            Efficient Human-Robot Safety Framework Based on Human Hand Trajectory Prediction and Path Replanning
-          </div>
-          <div class="meta">
-            Xinjie Chen, Hui Zhang, Bo Chen, <strong>Kang Li</strong>, Yiming Jiang
-          </div>
-          <div class="meta">
-            China Automation Congress, 2024
-          </div>
+      <div class="grant">
+        <div class="grant-title">
+          Key Technologies of Large-Model-Driven Autonomous Operation and Precision Control for Intelligent Medical Dual-Arm Robots
         </div>
-      </section>
+        <div class="grant-cn">
+          大模型驱动的智能医药双臂机器人自主操作与精准控制关键技术
+        </div>
+        <div class="grant-source">
+          Key Program of Natural Science Foundation of Hunan Province, China, Grant No. 2025JJ30024
+        </div>
+        <div class="grant-role">
+          <span class="badge">Member</span>
+          Role: Research Member
+        </div>
+      </div>
 
-      <section id="contact">
-        <h2>Contact</h2>
+      <div class="grant">
+        <div class="grant-title">
+          Key Technologies of Human-Robot Integration for Dispensing and Pharmaceutical Robots in Biological Vaccine Manufacturing
+        </div>
+        <div class="grant-cn">
+          面向生物疫苗制造的配药制药共融机器人关键技术研究
+        </div>
+        <div class="grant-source">
+          Major Research Plan of the National Natural Science Foundation of China, Grant No. 92148204, Completed
+        </div>
+        <div class="grant-role">
+          <span class="badge">Member</span>
+          Role: Research Member
+        </div>
+      </div>
+    </section>
 
-        <p>
-          I am open to discussions and collaborations related to dual-arm robotic manipulation,
-          motion planning, trajectory learning, embodied intelligent robots, and biochemical
-          laboratory automation.
-        </p>
+    <section id="publications">
+      <h2>Publications</h2>
 
-        <p>
-          Email:
-          <a href="mailto:kangrobotics@hnu.edu.cn">kangrobotics@hnu.edu.cn</a>
-        </p>
-      </section>
+      <div class="publication">
+        <div class="paper-title">
+          PCL-CMP: A Novel Dual-Arm Robotic Cooperative Motion Planning Algorithm Leveraging Pairwise Clearance Learning
+        </div>
+        <div class="authors">
+          Bo Chen, Hui Zhang, <strong>Kang Li</strong>, Yiming Jiang, Wei He, Chenguang Yang, Yaonan Wang
+        </div>
+        <div class="venue">
+          IEEE Transactions on Industrial Electronics, 2026, Early Access
+        </div>
+        <div class="paper-links">
+          <a href="#">IEEE Xplore</a>
+        </div>
+      </div>
 
-    </main>
+      <div class="publication">
+        <div class="paper-title">
+          CLEAR-MP: Clearance Learning-Based Efficient Motion Planning for Dual-Arm Robots Under End-Effector Orientation Constraints
+        </div>
+        <div class="authors">
+          Bo Chen, Hui Zhang, <strong>Kang Li</strong>, Yexin Fan, Yiming Jiang, Chenguang Yang, Yaonan Wang
+        </div>
+        <div class="venue">
+          IEEE Transactions on Automation Science and Engineering, 2026, Vol. 23
+        </div>
+        <div class="paper-links">
+          <a href="#">IEEE Xplore</a>
+        </div>
+      </div>
+
+      <div class="publication">
+        <div class="paper-title">
+          CLAMP: Clearance Learning Model-Driven Adaptive Motion Planning for Dual-Arm Robots
+        </div>
+        <div class="authors">
+          Bo Chen, Hui Zhang, <strong>Kang Li</strong>, Yexin Fan, Yiming Jiang, Wei He, Chenguang Yang, Yaonan Wang
+        </div>
+        <div class="venue">
+          IEEE/ASME Transactions on Mechatronics, 2026, Early Access
+        </div>
+        <div class="paper-links">
+          <a href="#">IEEE Xplore</a>
+        </div>
+      </div>
+
+      <div class="publication">
+        <div class="paper-title">
+          Robot Perception, Planning, and Control Technologies for Intelligent Biochemical Laboratories
+        </div>
+        <div class="authors">
+          Zhang Hui, <strong>Li Kang</strong>, Liu Li-Zhu, Chen Bo, Fan Ye-Xin, Jiang Yi-Ming, Wang Yao-Nan
+        </div>
+        <div class="venue">
+          Acta Automatica Sinica, 2025, 51(9): 1899–1921
+        </div>
+        <div class="paper-links">
+          <a href="https://doi.org/10.16383/j.aas.c240714">DOI: 10.16383/j.aas.c240714</a>
+        </div>
+      </div>
+
+      <div class="publication">
+        <div class="paper-title">
+          Modified Dynamic Movement Primitives With Control: A Novel Trajectory Planning Framework for Dual-Arm Asynchronous Tasks
+        </div>
+        <div class="authors">
+          <strong>Kang Li</strong>, Hui Zhang, Bo Chen, Yiming Jiang, Chenguang Yang, Yaonan Wang
+        </div>
+        <div class="venue">
+          IEEE Transactions on Industrial Electronics, 2025, Vol. 72, No. 10
+        </div>
+        <div class="paper-links">
+          <a href="#">IEEE Xplore</a>
+        </div>
+      </div>
+
+      <div class="publication">
+        <div class="paper-title">
+          Multi-Scale Feature Extraction Network with Half-Wavelet Pyramid Attention Mechanism for Robust 6D Pose Estimation
+        </div>
+        <div class="authors">
+          Chuiwang Kong, Hui Zhang, Weili Chen, Bo Chen, <strong>Kang Li</strong>
+        </div>
+        <div class="venue">
+          44th Chinese Control Conference, 2025
+        </div>
+        <div class="paper-links">
+          <a href="#">IEEE Xplore</a>
+        </div>
+      </div>
+
+      <div class="publication">
+        <div class="paper-title">
+          Efficient Human-Robot Safety Framework Based on Human Hand Trajectory Prediction and Path Replanning
+        </div>
+        <div class="authors">
+          Xinjie Chen, Hui Zhang, Bo Chen, <strong>Kang Li</strong>, Yiming Jiang
+        </div>
+        <div class="venue">
+          China Automation Congress, 2024
+        </div>
+        <div class="paper-links">
+          <a href="#">IEEE Xplore</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+
+      <p>
+        I am open to discussions and collaborations related to dual-arm robotic manipulation,
+        motion planning, trajectory learning, embodied intelligent robots, and biochemical
+        laboratory automation.
+      </p>
+
+      <p>
+        Email:
+        <a href="mailto:kangrobotics@hnu.edu.cn">kangrobotics@hnu.edu.cn</a>
+      </p>
+    </section>
 
     <footer>
       © 2026 Kang Li. Powered by GitHub Pages.
     </footer>
 
-  </div>
+  </main>
+
 </body>
 </html>
