@@ -91,11 +91,18 @@
       font-size: 20px;
       color: var(--primary);
       font-weight: 650;
-      margin-bottom: 16px;
+      margin-bottom: 8px;
+    }
+
+    .hero .affiliation {
+      color: var(--text);
+      font-size: 16.5px;
+      font-weight: 600;
+      margin-bottom: 14px;
     }
 
     .hero .description {
-      max-width: 790px;
+      max-width: 820px;
       color: var(--muted);
       font-size: 16.5px;
       margin-bottom: 22px;
@@ -179,10 +186,6 @@
       margin-top: 0;
     }
 
-    .muted {
-      color: var(--muted);
-    }
-
     .two-column {
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
@@ -208,30 +211,6 @@
       color: var(--muted);
     }
 
-    .news-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .news-list li {
-      display: grid;
-      grid-template-columns: 95px 1fr;
-      gap: 16px;
-      padding: 10px 0;
-      border-bottom: 1px dashed var(--border);
-    }
-
-    .news-list li:last-child {
-      border-bottom: none;
-    }
-
-    .news-date {
-      color: var(--primary);
-      font-weight: 700;
-      font-size: 14px;
-    }
-
     .tags {
       display: flex;
       flex-wrap: wrap;
@@ -244,42 +223,6 @@
       color: var(--primary);
       padding: 7px 13px;
       border-radius: 999px;
-      font-size: 14px;
-      font-weight: 650;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 18px;
-    }
-
-    .project-card {
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 22px;
-      background: #fcfdff;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
-    }
-
-    .project-card h3 {
-      margin: 0 0 10px;
-      font-size: 18px;
-      color: var(--text);
-    }
-
-    .project-card p {
-      color: var(--muted);
-      font-size: 15px;
-      margin-bottom: 12px;
-    }
-
-    .project-card .project-links {
       font-size: 14px;
       font-weight: 650;
     }
@@ -381,11 +324,6 @@
       .two-column {
         grid-template-columns: 1fr;
       }
-
-      .news-list li {
-        grid-template-columns: 1fr;
-        gap: 2px;
-      }
     }
   </style>
 </head>
@@ -404,7 +342,11 @@
         <h1>Kang Li</h1>
 
         <div class="subtitle">
-          Dual-Arm Robot Motion Planning · Trajectory Learning · Robotic Manipulation
+          Ph.D. Student in Robotics and Artificial Intelligence
+        </div>
+
+        <div class="affiliation">
+          College of Artificial Intelligence and Robotics, Hunan University
         </div>
 
         <p class="description">
@@ -426,9 +368,7 @@
   <nav>
     <div class="nav-inner">
       <a href="#about">About</a>
-      <a href="#news">News</a>
       <a href="#research">Research</a>
-      <a href="#projects">Projects</a>
       <a href="#grants">Funded Projects</a>
       <a href="#publications">Publications</a>
       <a href="#contact">Contact</a>
@@ -443,9 +383,10 @@
       <div class="two-column">
         <div>
           <p>
-            I am a researcher working on robotics and artificial intelligence, with a focus on
-            dual-arm robot motion planning, trajectory learning, and reliable manipulation in
-            structured yet complex task environments.
+            I am a Ph.D. student at the College of Artificial Intelligence and Robotics,
+            Hunan University. My research focuses on robotics and artificial intelligence,
+            especially dual-arm robot motion planning, trajectory learning, and reliable
+            manipulation in structured yet complex task environments.
           </p>
 
           <p>
@@ -458,38 +399,15 @@
         </div>
 
         <div class="info-box">
-          <h3>Research Keywords</h3>
+          <h3>Profile</h3>
           <ul>
-            <li>Dual-Arm Robotic Manipulation</li>
-            <li>Cooperative Motion Planning</li>
-            <li>Dynamic Movement Primitives</li>
-            <li>Learning from Demonstration</li>
-            <li>Embodied Intelligent Robots</li>
-            <li>Biochemical Laboratory Automation</li>
+            <li>Ph.D. Student</li>
+            <li>Hunan University</li>
+            <li>College of Artificial Intelligence and Robotics</li>
+            <li>Robotics and Artificial Intelligence</li>
           </ul>
         </div>
       </div>
-    </section>
-
-    <section id="news">
-      <h2>News</h2>
-
-      <ul class="news-list">
-        <li>
-          <div class="news-date">2026.06</div>
-          <div>Personal academic homepage launched.</div>
-        </li>
-
-        <li>
-          <div class="news-date">2026.05</div>
-          <div>Working on autonomous manipulation methods for embodied intelligent robots in biochemical laboratories.</div>
-        </li>
-
-        <li>
-          <div class="news-date">2026.04</div>
-          <div>Continuing research on dual-arm DMP skill generalization and reliable trajectory execution.</div>
-        </li>
-      </ul>
     </section>
 
     <section id="research">
@@ -508,57 +426,17 @@
         <span class="tag">Motion Planning</span>
         <span class="tag">Dynamic Movement Primitives</span>
         <span class="tag">Trajectory Learning</span>
+        <span class="tag">Learning from Demonstration</span>
         <span class="tag">Embodied AI</span>
         <span class="tag">Scientific Automation</span>
         <span class="tag">Biochemical Laboratories</span>
       </div>
     </section>
 
-    <section id="projects">
-      <h2>Selected Projects</h2>
-
-      <div class="project-grid">
-
-        <div class="project-card">
-          <h3>Dual-Arm DMP Skill Generalization</h3>
-          <p>
-            Investigating how dynamic movement primitives can be improved for goal-conditioned
-            trajectory generation and dual-arm manipulation tasks.
-          </p>
-          <div class="project-links">
-            <a href="#">Project Page</a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <h3>Embodied Robots for Biochemical Laboratory Automation</h3>
-          <p>
-            Exploring autonomous robotic operations for intelligent biochemical laboratories,
-            including precise manipulation, tool handling, and multi-step experimental tasks.
-          </p>
-          <div class="project-links">
-            <a href="#">Project Page</a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <h3>Trajectory Evaluation and Benchmarking</h3>
-          <p>
-            Designing evaluation metrics for goal accuracy, trajectory similarity, collision
-            avoidance, and execution robustness in robotic manipulation tasks.
-          </p>
-          <div class="project-links">
-            <a href="#">Project Page</a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
     <section id="grants">
       <h2>Funded Projects</h2>
 
-      <h3>Principal Investigator</h3>
+      <h3>Led Projects</h3>
 
       <div class="grant">
         <div class="grant-title">
@@ -571,8 +449,8 @@
           Postgraduate Scientific Research Innovation Project of Hunan Province
         </div>
         <div class="grant-role">
-          <span class="badge">PI</span>
-          Role: Principal Investigator
+          <span class="badge">Lead</span>
+          Role: Project Lead
         </div>
       </div>
 
@@ -587,12 +465,12 @@
           Natural Science Foundation of Hunan Province, China, Youth Student Basic Research Project, 2026–2027
         </div>
         <div class="grant-role">
-          <span class="badge">PI</span>
-          Role: Principal Investigator
+          <span class="badge">Lead</span>
+          Role: Project Lead
         </div>
       </div>
 
-      <h3>Research Participant</h3>
+      <h3>Participated Projects</h3>
 
       <div class="grant">
         <div class="grant-title">
@@ -605,8 +483,8 @@
           Key Program of the National Natural Science Foundation of China, Grant No. 62433010
         </div>
         <div class="grant-role">
-          <span class="badge">Participant</span>
-          Role: Research Participant
+          <span class="badge">Member</span>
+          Role: Research Member
         </div>
       </div>
 
@@ -621,8 +499,8 @@
           Key Program of Natural Science Foundation of Hunan Province, China, Grant No. 2025JJ30024
         </div>
         <div class="grant-role">
-          <span class="badge">Participant</span>
-          Role: Research Participant
+          <span class="badge">Member</span>
+          Role: Research Member
         </div>
       </div>
 
@@ -637,8 +515,8 @@
           Major Research Plan of the National Natural Science Foundation of China, Grant No. 92148204, Completed
         </div>
         <div class="grant-role">
-          <span class="badge">Participant</span>
-          Role: Research Participant
+          <span class="badge">Member</span>
+          Role: Research Member
         </div>
       </div>
     </section>
@@ -688,6 +566,21 @@
         </div>
         <div class="paper-links">
           <a href="#">IEEE Xplore</a>
+        </div>
+      </div>
+
+      <div class="publication">
+        <div class="paper-title">
+          Robot Perception, Planning, and Control Technologies for Intelligent Biochemical Laboratories
+        </div>
+        <div class="authors">
+          Zhang Hui, <strong>Li Kang</strong>, Liu Li-Zhu, Chen Bo, Fan Ye-Xin, Jiang Yi-Ming, Wang Yao-Nan
+        </div>
+        <div class="venue">
+          Acta Automatica Sinica, 2025, 51(9): 1899–1921
+        </div>
+        <div class="paper-links">
+          <a href="https://doi.org/10.16383/j.aas.c240714">DOI: 10.16383/j.aas.c240714</a>
         </div>
       </div>
 
